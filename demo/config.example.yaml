@@ -1,0 +1,31 @@
+# AlphaDesk public demo configuration template.
+# Illustrative placeholders only; not a production configuration.
+# Never put credentials, tokens, account IDs, or private strategy parameters here.
+
+mode: demo  # demo | paper | live (enable only in the private application as appropriate)
+
+market:
+  asset_class: us_equities_and_etfs
+  data_source: <configure-locally>
+  timezone: America/New_York
+
+strategies:
+  enabled:
+    - ORB
+    - VWAP_REVERSION
+    - EMA_MOMENTUM
+    - RSI2_DIP_BUY
+
+risk:
+  max_position_pct: <set-locally>
+  daily_loss_limit_pct: <set-locally>
+  max_drawdown_pct: <set-locally>
+  cooldown_after_loss_streak: <set-locally>
+
+execution:
+  broker: <configure-locally>
+  allow_live_orders: false
+
+monitoring:
+  telemetry_enabled: true
+  redact_sensitive_fields: true
